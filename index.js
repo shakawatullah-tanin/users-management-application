@@ -53,8 +53,11 @@ app.post("/users",(req,res)=>{
 
     newUser.id = users.length + 1;
 
+    users.push(newUser)
 
-    res.send(newUser)
+
+    res.send(users)
+
 
 })
 
