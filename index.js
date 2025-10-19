@@ -11,6 +11,8 @@ const app = express()
 
 app.use(cors())
 
+app.use(express.json())
+
 
 
 app.get("/", (req,res)=>{
@@ -40,6 +42,21 @@ const users =[
     {id:"3",name:"siam", email:"siam@gmail.com"}
 ]
 
+
+app.post("/users",(req,res)=>{
+
+
+    console.log("user post method")
+
+
+    const newUser = req.body;
+
+    newUser.id = users.length + 1;
+
+
+    res.send(newUser)
+
+})
 
 
 
